@@ -1,0 +1,85 @@
+i.fa.fa-times { cursor: pointer; }
+
+.main_logo {
+    @include size(300px);
+    @include pos(a, 0);
+    margin: auto;
+    svg {
+        display: block;
+        @include size(f, auto);
+    }
+}
+
+nav { @include size(f); @include pos(a,0); z-index: 100;
+    a._link { @include pos(a,0); @include size(60px); @include lH(60); 
+        transform-origin: center center; margin: auto; @include fZ(20);
+        color: color(base, clear); display: block; text-align: center;
+        white-space: nowrap;
+
+        &.footer { top: auto; transform: translateX(-30px); }
+        &.about, &.work { transform: rotate(-90deg); }
+        &.about { right: auto; }
+        &.work { left: auto; }
+
+        &.openned { display: none; }
+    }
+
+
+}
+
+main { @include size(f); position: relative;
+    section { @include pos(a,0); overflow: hidden; margin: auto; 
+        @extend ._trs;
+
+        .content { background-color: color(base, clear); 
+            padding: 60px 20px; position: absolute; @extend ._trs;
+            @include opacity(0); transform: translateX(-100px);
+
+            .head { @include size(f,60px); position: relative; margin-bottom: 20px;
+                h4, i { color: color(base, primary); @include fZ(30); @include lH(60); }
+                h4 { @include size(f); text-align: center; display: block; }
+                i { display: block; @include size(40px); @include pos(a,0,0,0,auto); }
+            }
+
+            article {
+                &.about { text-align: center; display: block; @include size(f,auto);
+                @include pos(a,50%,auto,auto,50%); transform: translate(-50%, -50%);
+                padding: 0 40px; }
+                &.contact { text-align: center; }
+            }
+
+            .list_work { @include size(f,auto); overflow-y: scroll; max-height: 80vh;
+                ul { @include size(f,auto);
+                    li.card._work { @include size(f,300px); margin-bottom: 20px;
+                        figure.img_holder { @include size(60%, f);
+                            display: block; float: left; 
+                            img { height: 100%; display: block; }
+                        }
+                        .about_work_holder { @include size(40%, f); float: right;
+                            article { padding: 10px 20px; }
+                        }
+                    }
+                }
+            }
+        }
+
+        &._vertical { @include size(0,f); 
+            &.work { left: auto; 
+                &.active { width: 80vh; }
+                .content { @include size(80vh,100%); }
+            }
+            &.about { right: auto; 
+                &.active { width: 50vh; }
+                .content { @include size(50vh,100%); }
+            }
+        }
+        &.footer { @include size(f,0); top: auto; 
+            &.active { height: 250px; }
+            .content { @include size(f,250px); transform: translateY(-100px); }
+        }
+    
+        &.active { z-index: 500; 
+            .content { @include opacity(1); transform: translate(0); }
+        }
+    }
+}

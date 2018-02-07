@@ -1,0 +1,26 @@
+@import "tools/fonts";
+@import "tools/reset";
+@import "tools/grids";
+@import "tools/mixins";
+@import "tools/function";
+
+$colors: (
+    base: (
+        clear: #fff,
+
+        primary: #00AAC6,
+        primaryClear: #f180cd,
+        font: #636366,
+
+    )
+);
+$z-layers: (
+    nav: 100,
+    header: 10
+);
+$bezier: cubic-bezier(0, 1.28, .99, .11);
+
+@import "tools/base";
+@import "tools/animation";
+
+@import "pages/home";

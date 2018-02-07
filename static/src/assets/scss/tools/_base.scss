@@ -1,0 +1,11 @@
+.form_container {
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+._trs { transition: all .2s ease; }
+
+html, body { height: 100%; }
+body { font-family: 'lato', 'helvetica', 'sans-serif'; @include FS(18); 
+    background-color: color(base, primary);
+} 
